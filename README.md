@@ -5,4 +5,6 @@ This project is developed with SharpDevelop (yes, you have read right, [SharpDev
 
 Feel free to contribute or anything else!
 
+It is still in development, but it is already a little bit useful...
+
 :)
