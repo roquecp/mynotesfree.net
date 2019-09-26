@@ -608,6 +608,25 @@ namespace MyNotesFree
 		{
 			statusAnnotationChanged.Text = "Alterado";
 		}
+
+		void LvAnnotationsDrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+		{
+			e.DrawDefault = true;
+		}
+		
+		void LvAnnotationsDrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+		{
+	        String text = (e.ColumnIndex == 0 ? e.Item.Text : e.SubItem.Text);
+
+	        e.DrawBackground();
+	        if (e.Item.Selected) 
+	        {
+	        	e.Graphics.FillRectangle(new SolidBrush(Color.Blue), e.Bounds);
+		        e.Graphics.DrawString(text, lvAnnotations.Font, new SolidBrush(Color.White), e.Bounds);
+	        } else {
+	        	e.Graphics.DrawString(text, lvAnnotations.Font, new SolidBrush(Color.Black), e.Bounds);
+	        }
+		}
 		
 	
 	}
