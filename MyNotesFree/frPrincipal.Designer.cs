@@ -280,7 +280,7 @@ namespace MyNotesFree
 			this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripSeparator();
 			this.iconMenuSair = new System.Windows.Forms.ToolStripMenuItem();
 			this.colorPicker = new System.Windows.Forms.ColorDialog();
-			splitPrincipal = new System.Windows.Forms.SplitContainer();
+			this.splitPrincipal = new System.Windows.Forms.SplitContainer();
 			((System.ComponentModel.ISupportInitialize)(this.splitAnnotationList)).BeginInit();
 			this.splitAnnotationList.Panel1.SuspendLayout();
 			this.splitAnnotationList.Panel2.SuspendLayout();
@@ -292,10 +292,10 @@ namespace MyNotesFree
 			this.toolBar.SuspendLayout();
 			this.menuPrincipal.SuspendLayout();
 			this.iconMenu.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(splitPrincipal)).BeginInit();
-			splitPrincipal.Panel1.SuspendLayout();
-			splitPrincipal.Panel2.SuspendLayout();
-			splitPrincipal.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitPrincipal)).BeginInit();
+			this.splitPrincipal.Panel1.SuspendLayout();
+			this.splitPrincipal.Panel2.SuspendLayout();
+			this.splitPrincipal.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// splitAnnotationList
@@ -328,9 +328,11 @@ namespace MyNotesFree
 			this.chCategory});
 			this.lvAnnotations.ContextMenuStrip = this.menuLvAnnotations;
 			this.lvAnnotations.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.lvAnnotations.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lvAnnotations.FullRowSelect = true;
 			this.lvAnnotations.GridLines = true;
 			this.lvAnnotations.HideSelection = false;
+			this.lvAnnotations.LabelWrap = false;
 			this.lvAnnotations.Location = new System.Drawing.Point(0, 0);
 			this.lvAnnotations.MultiSelect = false;
 			this.lvAnnotations.Name = "lvAnnotations";
@@ -347,7 +349,7 @@ namespace MyNotesFree
 			// chTitle
 			// 
 			this.chTitle.Text = "Título";
-			this.chTitle.Width = 160;
+			this.chTitle.Width = 200;
 			// 
 			// chCreationDate
 			// 
@@ -363,6 +365,7 @@ namespace MyNotesFree
 			// 
 			this.chSize.Text = "Tamanho";
 			this.chSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.chSize.Width = 65;
 			// 
 			// chCategory
 			// 
@@ -414,12 +417,12 @@ namespace MyNotesFree
 			// 
 			// reText
 			// 
-			this.reText.AutoWordSelection = true;
 			this.reText.ContextMenuStrip = this.menuEditor;
 			this.reText.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.reText.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.reText.HideSelection = false;
 			this.reText.Location = new System.Drawing.Point(0, 31);
+			this.reText.Multiline = false;
 			this.reText.Name = "reText";
 			this.reText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
 			this.reText.SelectionAlignment = MyNotesFreeComponent.TextAlign.Left;
@@ -1301,7 +1304,7 @@ namespace MyNotesFree
 			this.toolStripMenuItem8,
 			this.quickNoteToolStripMenuItem});
 			this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-			this.exibirToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+			this.exibirToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
 			this.exibirToolStripMenuItem.Text = "E&xibir";
 			// 
 			// barraDestatusToolStripMenuItem
@@ -1398,33 +1401,33 @@ namespace MyNotesFree
 			// 
 			// splitPrincipal
 			// 
-			splitPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-			splitPrincipal.Location = new System.Drawing.Point(2, 51);
-			splitPrincipal.Name = "splitPrincipal";
-			splitPrincipal.Orientation = System.Windows.Forms.Orientation.Horizontal;
+			this.splitPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.splitPrincipal.Location = new System.Drawing.Point(2, 51);
+			this.splitPrincipal.Name = "splitPrincipal";
+			this.splitPrincipal.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			// 
 			// splitPrincipal.Panel1
 			// 
-			splitPrincipal.Panel1.Controls.Add(this.splitAnnotationList);
-			splitPrincipal.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.splitPrincipal.Panel1.Controls.Add(this.splitAnnotationList);
+			this.splitPrincipal.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			// 
 			// splitPrincipal.Panel2
 			// 
-			splitPrincipal.Panel2.Controls.Add(this.reText);
-			splitPrincipal.Panel2.Controls.Add(this.statusBar);
-			splitPrincipal.Panel2.Controls.Add(this.panel1);
-			splitPrincipal.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			splitPrincipal.Size = new System.Drawing.Size(1073, 436);
-			splitPrincipal.SplitterDistance = 130;
-			splitPrincipal.TabIndex = 6;
-			splitPrincipal.TabStop = false;
+			this.splitPrincipal.Panel2.Controls.Add(this.reText);
+			this.splitPrincipal.Panel2.Controls.Add(this.statusBar);
+			this.splitPrincipal.Panel2.Controls.Add(this.panel1);
+			this.splitPrincipal.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.splitPrincipal.Size = new System.Drawing.Size(1073, 436);
+			this.splitPrincipal.SplitterDistance = 130;
+			this.splitPrincipal.TabIndex = 6;
+			this.splitPrincipal.TabStop = false;
 			// 
 			// frPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1077, 489);
-			this.Controls.Add(splitPrincipal);
+			this.Controls.Add(this.splitPrincipal);
 			this.Controls.Add(this.toolBar);
 			this.Controls.Add(this.menuPrincipal);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1452,11 +1455,11 @@ namespace MyNotesFree
 			this.menuPrincipal.ResumeLayout(false);
 			this.menuPrincipal.PerformLayout();
 			this.iconMenu.ResumeLayout(false);
-			splitPrincipal.Panel1.ResumeLayout(false);
-			splitPrincipal.Panel2.ResumeLayout(false);
-			splitPrincipal.Panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(splitPrincipal)).EndInit();
-			splitPrincipal.ResumeLayout(false);
+			this.splitPrincipal.Panel1.ResumeLayout(false);
+			this.splitPrincipal.Panel2.ResumeLayout(false);
+			this.splitPrincipal.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitPrincipal)).EndInit();
+			this.splitPrincipal.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
