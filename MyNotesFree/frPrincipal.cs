@@ -5,6 +5,7 @@
  */
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using MyNotesFree.component;
@@ -638,15 +639,15 @@ namespace MyNotesFree
 		
 		void LvAnnotationsDrawSubItem(object sender, DrawListViewSubItemEventArgs e)
 		{
-	        String text = (e.ColumnIndex == 0 ? e.Item.Text : e.SubItem.Text);
-
 	        e.DrawBackground();
-	        if (e.Item.Selected) 
+            String text = (e.ColumnIndex == 0 ? e.Item.Text : e.SubItem.Text);
+
+            if (e.Item.Selected)
 	        {
 	        	e.Graphics.FillRectangle(new SolidBrush(Color.Blue), e.Bounds);
-		        e.Graphics.DrawString(text, lvAnnotations.Font, new SolidBrush(Color.White), e.Bounds);
+	        	e.Graphics.DrawString(text, lvAnnotations.Font, new SolidBrush(Color.White), e.Bounds.X + 2, e.Bounds.Y);
 	        } else {
-	        	e.Graphics.DrawString(text, lvAnnotations.Font, new SolidBrush(Color.Black), e.Bounds);
+	        	e.Graphics.DrawString(text, lvAnnotations.Font, new SolidBrush(Color.Black), e.Bounds.X + 2, e.Bounds.Y);
 	        }
 		}
 		
