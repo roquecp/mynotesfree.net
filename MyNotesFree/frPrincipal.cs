@@ -88,24 +88,45 @@ namespace MyNotesFree
 			currentBackColor = reText.BackColor;
 			currentForeColor = reText.ForeColor;
 			
-			LoadPositions();
+			LoadRegistryDefinitions();
 		}
 
-		void LoadPositions()
+		void LoadRegistryDefinitions()
 		{
-			var key = Registry.LocalMachine.OpenSubKey("Software\\JellySoftware\\MyNotesFree.net");
+			var key = Registry.CurrentUser.OpenSubKey("Software\\JellySoftware\\MyNotesFree.net");
 			if (key != null) {
 				this.Top = (int)key.GetValue("FormTop", this.Top);
 				this.Left = (int)key.GetValue("FormLeft", this.Left);
 				this.Width = (int)key.GetValue("FormWidth", this.Width);
 				this.Height = (int)key.GetValue("FormHeight", this.Height);
-				this.columnSort = (int)key.GetValue("ColumnSort", 2); //Data alteração
+				this.columnSort = (int)key.GetValue("ColumnSort", 2); //TODO: Data alteração
 				this.sortOrder = (int)key.GetValue("SortOrder", 0); //desc
 				this.splitAnnotationList.SplitterDistance = (int)key.GetValue("CategWidth", 500);
 				this.splitPrincipal.SplitterDistance = (int)key.GetValue("GridHeight", 130);
 	
-				tbAutomaticIdent.Checked = (bool)key.GetValue("AutoIndent", false);
-				tbLineBreak.Checked = (bool)key.GetValue("LineBreal", true);
+				tbAutomaticIdent.Checked = (int)key.GetValue("AutoIndent", 0) == 1;
+				tbLineBreak.Checked = (int)key.GetValue("LineBreak", 0) == 1;
+			}
+		}
+		
+		void SaveRegistryDefinitions() 
+		{
+			var key = Registry.CurrentUser.OpenSubKey("Software\\JellySoftware\\MyNotesFree.net", true);
+			if (key == null) {
+				key = Registry.CurrentUser.CreateSubKey("Software\\JellySoftware\\MyNotesFree.net");
+			}
+			if (key != null) {
+				key.SetValue("FormTop", this.Top);
+				key.SetValue("FormLeft", this.Left);
+				key.SetValue("FormWidth", this.Width);
+				key.SetValue("FormHeight", this.Height);
+				key.SetValue("ColumnSort", 2); //TODO: Data alteração
+				key.SetValue("SortOrder", 0); //desc
+				key.SetValue("CategWidth", this.splitAnnotationList.SplitterDistance);
+				key.SetValue("GridHeight", this.splitPrincipal.SplitterDistance);
+	
+				key.SetValue("AutoIndent", tbAutomaticIdent.Checked ? 1 : 0);
+				key.SetValue("LineBreak", tbLineBreak.Checked ? 1 : 0);
 			}
 		}
 		
@@ -175,6 +196,7 @@ namespace MyNotesFree
 		{
 			notifyIcon.Dispose();
 			WinNoteApi.UnregisterHotKey(this.Handle, 0);
+			SaveRegistryDefinitions();
 		}
 		
 		//Encontra o componente selecionado (focused)
