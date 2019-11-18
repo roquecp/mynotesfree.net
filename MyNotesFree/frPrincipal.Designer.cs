@@ -422,7 +422,6 @@ namespace MyNotesFree
 			this.reText.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.reText.HideSelection = false;
 			this.reText.Location = new System.Drawing.Point(0, 31);
-			this.reText.Multiline = false;
 			this.reText.Name = "reText";
 			this.reText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
 			this.reText.SelectionAlignment = MyNotesFreeComponent.TextAlign.Left;
@@ -1304,7 +1303,7 @@ namespace MyNotesFree
 			this.toolStripMenuItem8,
 			this.quickNoteToolStripMenuItem});
 			this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
-			this.exibirToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+			this.exibirToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
 			this.exibirToolStripMenuItem.Text = "E&xibir";
 			// 
 			// barraDestatusToolStripMenuItem

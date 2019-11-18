@@ -102,6 +102,10 @@
     <Compile Include="database\entity\Annotation.cs" />
     <Compile Include="database\entity\Category.cs" />
     <Compile Include="database\entity\Configuration.cs" />
+    <Compile Include="frCategory.cs" />
+    <Compile Include="frCategory.Designer.cs">
+      <DependentUpon>frCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="frCategoryList.cs" />
     <Compile Include="frPrincipal.cs" />
     <Compile Include="frCategoryList.Designer.cs">
@@ -115,6 +119,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frCategory.resx">
+      <DependentUpon>frCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frCategoryList.resx">
       <DependentUpon>frCategoryList.cs</DependentUpon>
     </EmbeddedResource>
