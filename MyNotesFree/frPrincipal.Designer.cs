@@ -134,6 +134,10 @@ namespace MyNotesFree
 		private System.Windows.Forms.ToolStripMenuItem miAlterarCategoria;
 		private System.Windows.Forms.ToolStripMenuItem alterarCategoriaToolStripMenuItem;
 		private System.Windows.Forms.SplitContainer splitPrincipal;
+		private System.Windows.Forms.Panel pnlBtnCategories;
+		private System.Windows.Forms.Button btnAddCategory;
+		private System.Windows.Forms.Button btnDelCategory;
+		private System.Windows.Forms.Button btnEditCategory;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -169,6 +173,10 @@ namespace MyNotesFree
 			this.miNovaAnotacao = new System.Windows.Forms.ToolStripMenuItem();
 			this.miExcluirAnotacao = new System.Windows.Forms.ToolStripMenuItem();
 			this.miAlterarCategoria = new System.Windows.Forms.ToolStripMenuItem();
+			this.pnlBtnCategories = new System.Windows.Forms.Panel();
+			this.btnDelCategory = new System.Windows.Forms.Button();
+			this.btnEditCategory = new System.Windows.Forms.Button();
+			this.btnAddCategory = new System.Windows.Forms.Button();
 			this.lvCategories = new System.Windows.Forms.ListView();
 			this.reText = new MyNotesFreeComponent.AdvRichTextBox();
 			this.menuEditor = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -286,6 +294,7 @@ namespace MyNotesFree
 			this.splitAnnotationList.Panel2.SuspendLayout();
 			this.splitAnnotationList.SuspendLayout();
 			this.menuLvAnnotations.SuspendLayout();
+			this.pnlBtnCategories.SuspendLayout();
 			this.menuEditor.SuspendLayout();
 			this.statusBar.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -311,6 +320,7 @@ namespace MyNotesFree
 			// 
 			// splitAnnotationList.Panel2
 			// 
+			this.splitAnnotationList.Panel2.Controls.Add(this.pnlBtnCategories);
 			this.splitAnnotationList.Panel2.Controls.Add(this.lvCategories);
 			this.splitAnnotationList.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.splitAnnotationList.Size = new System.Drawing.Size(1073, 130);
@@ -401,6 +411,51 @@ namespace MyNotesFree
 			this.miAlterarCategoria.Size = new System.Drawing.Size(170, 22);
 			this.miAlterarCategoria.Text = "Alterar &categoria...";
 			this.miAlterarCategoria.Click += new System.EventHandler(this.MiAlterarCategoriaClick);
+			// 
+			// pnlBtnCategories
+			// 
+			this.pnlBtnCategories.Controls.Add(this.btnDelCategory);
+			this.pnlBtnCategories.Controls.Add(this.btnEditCategory);
+			this.pnlBtnCategories.Controls.Add(this.btnAddCategory);
+			this.pnlBtnCategories.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pnlBtnCategories.Location = new System.Drawing.Point(325, 0);
+			this.pnlBtnCategories.Name = "pnlBtnCategories";
+			this.pnlBtnCategories.Size = new System.Drawing.Size(24, 130);
+			this.pnlBtnCategories.TabIndex = 1;
+			// 
+			// btnDelCategory
+			// 
+			this.btnDelCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnDelCategory.Image")));
+			this.btnDelCategory.Location = new System.Drawing.Point(0, 44);
+			this.btnDelCategory.Name = "btnDelCategory";
+			this.btnDelCategory.Size = new System.Drawing.Size(24, 23);
+			this.btnDelCategory.TabIndex = 2;
+			this.btnDelCategory.TabStop = false;
+			this.btnDelCategory.UseVisualStyleBackColor = true;
+			this.btnDelCategory.Click += new System.EventHandler(this.BtnDelCategoryClick);
+			// 
+			// btnEditCategory
+			// 
+			this.btnEditCategory.BackColor = System.Drawing.SystemColors.Control;
+			this.btnEditCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCategory.Image")));
+			this.btnEditCategory.Location = new System.Drawing.Point(0, 23);
+			this.btnEditCategory.Name = "btnEditCategory";
+			this.btnEditCategory.Size = new System.Drawing.Size(24, 23);
+			this.btnEditCategory.TabIndex = 1;
+			this.btnEditCategory.TabStop = false;
+			this.btnEditCategory.UseVisualStyleBackColor = false;
+			this.btnEditCategory.Click += new System.EventHandler(this.BtnEditCategoryClick);
+			// 
+			// btnAddCategory
+			// 
+			this.btnAddCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCategory.Image")));
+			this.btnAddCategory.Location = new System.Drawing.Point(0, 2);
+			this.btnAddCategory.Name = "btnAddCategory";
+			this.btnAddCategory.Size = new System.Drawing.Size(24, 23);
+			this.btnAddCategory.TabIndex = 0;
+			this.btnAddCategory.TabStop = false;
+			this.btnAddCategory.UseVisualStyleBackColor = true;
+			this.btnAddCategory.Click += new System.EventHandler(this.BtnAddCategoryClick);
 			// 
 			// lvCategories
 			// 
@@ -1444,6 +1499,7 @@ namespace MyNotesFree
 			((System.ComponentModel.ISupportInitialize)(this.splitAnnotationList)).EndInit();
 			this.splitAnnotationList.ResumeLayout(false);
 			this.menuLvAnnotations.ResumeLayout(false);
+			this.pnlBtnCategories.ResumeLayout(false);
 			this.menuEditor.ResumeLayout(false);
 			this.statusBar.ResumeLayout(false);
 			this.statusBar.PerformLayout();

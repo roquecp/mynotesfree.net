@@ -124,6 +124,7 @@ namespace MyNotesFree
 			this.btnCancelar.TabIndex = 8;
 			this.btnCancelar.Text = "&Cancelar";
 			this.btnCancelar.UseVisualStyleBackColor = true;
+			this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
 			// 
 			// btnSalvar
 			// 
@@ -135,6 +136,7 @@ namespace MyNotesFree
 			this.btnSalvar.TabIndex = 7;
 			this.btnSalvar.Text = "&Salvar";
 			this.btnSalvar.UseVisualStyleBackColor = true;
+			this.btnSalvar.Click += new System.EventHandler(this.BtnSalvarClick);
 			// 
 			// btnTestColor
 			// 
@@ -165,6 +167,7 @@ namespace MyNotesFree
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "frCategory";
 			this.Text = "Cadastro de categorias";
+			this.Shown += new System.EventHandler(this.FrCategoryShown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

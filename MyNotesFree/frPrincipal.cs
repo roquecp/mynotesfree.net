@@ -651,6 +651,24 @@ namespace MyNotesFree
 	        }
 		}
 		
+		void BtnAddCategoryClick(object sender, EventArgs e)
+		{
+			var frCategory = new frCategory();
+			if (frCategory.ShowDialog() == DialogResult.OK) {
+			}
+			this.Focus();
+		}
+
+		void BtnEditCategoryClick(object sender, EventArgs e)
+		{
+			this.Focus();
+		}
+
+		void BtnDelCategoryClick(object sender, EventArgs e)
+		{
+			this.Focus();
+		}
+		
 	
 	}
 }
