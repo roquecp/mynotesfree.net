@@ -129,7 +129,6 @@ namespace MyNotesFree
 			// btnSalvar
 			// 
 			this.btnSalvar.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.btnSalvar.Enabled = false;
 			this.btnSalvar.Location = new System.Drawing.Point(252, 138);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(75, 23);

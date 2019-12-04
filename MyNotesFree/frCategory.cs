@@ -60,6 +60,7 @@ namespace MyNotesFree
 			category.MustHide = (cbMustHide.Checked ? 1 : 0);
 			category.Color = edBackColor.Text;
 			category.Font = edFontColor.Text;
+			category.Selected = 0;
 			
 			if (categoryId == 0) {
 				categoryDao.insert(category);

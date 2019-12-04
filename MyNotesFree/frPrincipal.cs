@@ -243,6 +243,7 @@ namespace MyNotesFree
  		*/
 		void populate_Categories()
 		{
+			populatingCategs = true;
 			try {
 				lvCategories.BeginUpdate();
 				lvCategories.Items.Clear();
@@ -655,21 +656,36 @@ namespace MyNotesFree
 		{
 			var frCategory = new frCategory();
 			if (frCategory.ShowDialog() == DialogResult.OK) {
+				populate_Categories();
 			}
-			this.Focus();
+			lvCategories.Focus();
 		}
 
 		void BtnEditCategoryClick(object sender, EventArgs e)
 		{
-			this.Focus();
+			if (lvCategories.SelectedItems.Count > 0) {
+				var category = categoryDao.get(int.Parse(lvCategories.SelectedItems[0].Tag.ToString()));
+				var frCategory = new frCategory();
+				frCategory.CategoryId = category.Id;
+				if (frCategory.ShowDialog() == DialogResult.OK) {
+					populate_Categories();
+				}
+			}
+			lvCategories.Focus();
 		}
 
 		void BtnDelCategoryClick(object sender, EventArgs e)
 		{
-			this.Focus();
+			populate_Categories();
+			lvCategories.Focus();
 		}
 		
-	
+		void LvCategoriesItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+		{
+			btnDelCategory.Enabled = e.IsSelected;
+			btnEditCategory.Enabled = e.IsSelected;
+		}
+
 	}
 }
 

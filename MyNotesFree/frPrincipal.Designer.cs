@@ -138,6 +138,7 @@ namespace MyNotesFree
 		private System.Windows.Forms.Button btnAddCategory;
 		private System.Windows.Forms.Button btnDelCategory;
 		private System.Windows.Forms.Button btnEditCategory;
+		private System.Windows.Forms.ToolTip ToolTips;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -289,6 +290,7 @@ namespace MyNotesFree
 			this.iconMenuSair = new System.Windows.Forms.ToolStripMenuItem();
 			this.colorPicker = new System.Windows.Forms.ColorDialog();
 			this.splitPrincipal = new System.Windows.Forms.SplitContainer();
+			this.ToolTips = new System.Windows.Forms.ToolTip(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.splitAnnotationList)).BeginInit();
 			this.splitAnnotationList.Panel1.SuspendLayout();
 			this.splitAnnotationList.Panel2.SuspendLayout();
@@ -425,24 +427,28 @@ namespace MyNotesFree
 			// 
 			// btnDelCategory
 			// 
+			this.btnDelCategory.Enabled = false;
 			this.btnDelCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnDelCategory.Image")));
-			this.btnDelCategory.Location = new System.Drawing.Point(0, 44);
+			this.btnDelCategory.Location = new System.Drawing.Point(0, 46);
 			this.btnDelCategory.Name = "btnDelCategory";
 			this.btnDelCategory.Size = new System.Drawing.Size(24, 23);
 			this.btnDelCategory.TabIndex = 2;
 			this.btnDelCategory.TabStop = false;
+			this.ToolTips.SetToolTip(this.btnDelCategory, "Excluir a categoria selecionada");
 			this.btnDelCategory.UseVisualStyleBackColor = true;
 			this.btnDelCategory.Click += new System.EventHandler(this.BtnDelCategoryClick);
 			// 
 			// btnEditCategory
 			// 
 			this.btnEditCategory.BackColor = System.Drawing.SystemColors.Control;
+			this.btnEditCategory.Enabled = false;
 			this.btnEditCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCategory.Image")));
-			this.btnEditCategory.Location = new System.Drawing.Point(0, 23);
+			this.btnEditCategory.Location = new System.Drawing.Point(0, 24);
 			this.btnEditCategory.Name = "btnEditCategory";
 			this.btnEditCategory.Size = new System.Drawing.Size(24, 23);
 			this.btnEditCategory.TabIndex = 1;
 			this.btnEditCategory.TabStop = false;
+			this.ToolTips.SetToolTip(this.btnEditCategory, "Editar a categoria selecionada");
 			this.btnEditCategory.UseVisualStyleBackColor = false;
 			this.btnEditCategory.Click += new System.EventHandler(this.BtnEditCategoryClick);
 			// 
@@ -454,6 +460,7 @@ namespace MyNotesFree
 			this.btnAddCategory.Size = new System.Drawing.Size(24, 23);
 			this.btnAddCategory.TabIndex = 0;
 			this.btnAddCategory.TabStop = false;
+			this.ToolTips.SetToolTip(this.btnAddCategory, "Adicionar uma categoria");
 			this.btnAddCategory.UseVisualStyleBackColor = true;
 			this.btnAddCategory.Click += new System.EventHandler(this.BtnAddCategoryClick);
 			// 
@@ -469,6 +476,7 @@ namespace MyNotesFree
 			this.lvCategories.UseCompatibleStateImageBehavior = false;
 			this.lvCategories.View = System.Windows.Forms.View.List;
 			this.lvCategories.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.LvCategoriesItemChecked);
+			this.lvCategories.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.LvCategoriesItemSelectionChanged);
 			// 
 			// reText
 			// 

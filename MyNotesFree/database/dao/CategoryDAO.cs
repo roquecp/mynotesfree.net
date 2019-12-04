@@ -25,35 +25,33 @@ namespace MyNotesFree.database.dao
 
 		public void update(Category category)
 		{
-			throw new NotImplementedException();
-//			cmd = DBAccess.getCommand("set id = @id, title = @title, createdAt = @createdAt, updatedAt = @updatedAt, text = @text, categoryId = @categoryId, position = @position where id = @id");
-//			var pId = new SQLiteParameter("@id", annotation.Id);
-//			var pTitle = new SQLiteParameter("@title", annotation.Title);
-//			var pCreatedAt = new SQLiteParameter("@createdAt", annotation.CreatedAt.ToString("yyyy-MM-dd-hh-mm-ss"));
-//			var pUdatedAt = new SQLiteParameter("@updatedAt", annotation.UpdatedAt.ToString("yyyy-MM-dd-hh-mm-ss")); 
-//			var pText = new SQLiteParameter("@text", annotation.Text);
-//			var pCategoryId = new SQLiteParameter("@categoryId", annotation.CategoryId);
-//			var pPosition = new SQLiteParameter("@position", annotation.Position); 
-//			cmd.Parameters.Add(pId);
-//			cmd.Parameters.Add(pTitle);
-//			cmd.Parameters.Add(pCreatedAt);
-//			cmd.Parameters.Add(pUdatedAt);
-//			cmd.Parameters.Add(pText);
-//			cmd.Parameters.Add(pCategoryId);
-//			cmd.Parameters.Add(pPosition);
-//			
-//			cmd.ExecuteNonQuery();
+			var cmd = DBAccess.getCommand("update category set id = @id, description = @description, color = @color, font = @font, selected = @selected, mustHide = @mustHide, editable = @editable where id = @id");
+			var pCodCateg = new SQLiteParameter("@id", category.Id);
+			var pDesCateg = new SQLiteParameter("@description", category.Description);
+			var pColor = new SQLiteParameter("@color", category.Color);
+			var pFont = new SQLiteParameter("@font", category.Font); 
+			var pSelected = new SQLiteParameter("@selected", category.Selected);
+			var pMustHide = new SQLiteParameter("@mustHide", category.MustHide);
+			var pEditable = new SQLiteParameter("@editable", category.Editable);
+			cmd.Parameters.Add(pCodCateg);
+			cmd.Parameters.Add(pDesCateg);
+			cmd.Parameters.Add(pColor);
+			cmd.Parameters.Add(pFont);
+			cmd.Parameters.Add(pSelected);
+			cmd.Parameters.Add(pMustHide);
+			cmd.Parameters.Add(pEditable);
+			cmd.ExecuteNonQuery();
 		}
 
 		public void insert(Category category)
 		{
 			var cmd = DBAccess.getCommand("select max(id) as id from category");
 			var res = cmd.ExecuteScalar();
-			var lastId = 1;
+			var nextId = 1;
 			if (res != DBNull.Value) {
-				lastId = Convert.ToInt16(res) + 1;
+				nextId = Convert.ToInt16(res) + 1;
 			}
-			category.Id = lastId;
+			category.Id = nextId;
 			
 			cmd = DBAccess.getCommand("insert into category (id, description, color, font, selected, mustHide, editable) values (@id, @description, @color, @font, @selected, @mustHide, @editable)");
 			var pCodCateg = new SQLiteParameter("@id", category.Id);
@@ -63,7 +61,7 @@ namespace MyNotesFree.database.dao
 			var pSelected = new SQLiteParameter("@selected", category.Selected);
 			var pMustHide = new SQLiteParameter("@mustHide", category.MustHide);
 			var pEditable = new SQLiteParameter("@editable", category.Editable);
-			cmd.Parameters.Add(pMustHide);
+			cmd.Parameters.Add(pCodCateg);
 			cmd.Parameters.Add(pDesCateg);
 			cmd.Parameters.Add(pColor);
 			cmd.Parameters.Add(pFont);
