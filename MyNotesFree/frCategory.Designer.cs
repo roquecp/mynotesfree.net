@@ -24,6 +24,7 @@ namespace MyNotesFree
 		private System.Windows.Forms.Button btnCancelar;
 		private System.Windows.Forms.Button btnSalvar;
 		private System.Windows.Forms.Button btnTestColor;
+		private System.Windows.Forms.ContextMenuStrip menuColors;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -46,6 +47,7 @@ namespace MyNotesFree
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +58,7 @@ namespace MyNotesFree
 			this.btnCancelar = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.btnTestColor = new System.Windows.Forms.Button();
+			this.menuColors = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.SuspendLayout();
 			// 
 			// label1
@@ -147,6 +150,11 @@ namespace MyNotesFree
 			this.btnTestColor.TabIndex = 9;
 			this.btnTestColor.Text = "Teste Cor";
 			this.btnTestColor.UseVisualStyleBackColor = true;
+			// 
+			// menuColors
+			// 
+			this.menuColors.Name = "menuColors";
+			this.menuColors.Size = new System.Drawing.Size(153, 26);
 			// 
 			// frCategory
 			// 

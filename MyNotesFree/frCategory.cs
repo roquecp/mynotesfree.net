@@ -27,6 +27,46 @@ namespace MyNotesFree
 		public frCategory()
 		{
 			InitializeComponent();
+			/*
+aliceblue
+azure
+beige
+black
+cornsilk
+floralwhite
+gainsboro
+ghostwhite
+honeydew
+ivory
+khaki
+lavender
+lavenderblush
+lemonchiffon
+lightcyan
+lightgoldenrodyellow
+lightyellow
+linen
+mintcream
+moccasin
+oldlace
+palegoldenrod
+papayawhip
+seashell
+snow
+whitesmoke
+white
+
+			 */
+			defaultColors 
+			for (int i = 0; i < defaultColors.Length; i++) {
+				var b = new Bitmap(20, 20);
+				Graphics.FromImage(b).FillRectangle(new SolidBrush(Color.FromName(defaultColors[i].Name)), 0, 0, 20, 20);
+				ssbFontColor.DropDownItems.Add(defaultColors[i].Name).Image = b;
+				ssbBackColor.DropDownItems.Add(defaultColors[i].Name).Image = b;  
+			}
+			ssbFontColor.DropDownItems.Add("-");
+			ssbFontColor.DropDownItems.Add(MORE_COLOR_NAME);
+
 		}
 
 		public int CategoryId {
