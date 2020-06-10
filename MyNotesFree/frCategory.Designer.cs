@@ -154,12 +154,13 @@ namespace MyNotesFree
 			// menuColors
 			// 
 			this.menuColors.Name = "menuColors";
-			this.menuColors.Size = new System.Drawing.Size(153, 26);
+			this.menuColors.Size = new System.Drawing.Size(61, 4);
 			// 
 			// frCategory
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.btnCancelar;
 			this.ClientSize = new System.Drawing.Size(435, 178);
 			this.Controls.Add(this.btnTestColor);
 			this.Controls.Add(this.btnCancelar);
@@ -172,9 +173,14 @@ namespace MyNotesFree
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.KeyPreview = true;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "frCategory";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Cadastro de categorias";
 			this.Shown += new System.EventHandler(this.FrCategoryShown);
+			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrCategoryKeyPress);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
